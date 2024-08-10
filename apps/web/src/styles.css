@@ -1,0 +1,6 @@
+/* You can add global styles to this file, and also import other style files */
+/* TODO:// Change the font family name */
+@font-face {
+    font-family: 'Monsoon';
+    src: local('Monsoon'), url(./assets/fonts/AlexBrush-Regular.ttf) format('truetype')
+}

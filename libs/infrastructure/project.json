@@ -1,0 +1,63 @@
+{
+  "name": "infrastructure",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/infrastructure/bin",
+  "projectType": "library",
+  "targets": {
+    "bootstrap": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/infrastructure",
+        "outputPath": "dist/libs/infrastructure",
+        "commands": [
+          {
+            "command": "npx aws-cdk bootstrap",
+            "forwardAllArgs": true
+          }
+        ]
+      }
+    },
+    "deploy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/infrastructure",
+        "outputPath": "dist/libs/infrastructure",
+        "commands": [
+          {
+            "command": "npx aws-cdk deploy --all --require-approval never --force",
+            "forwardAllArgs": true
+          }
+        ]
+      },
+      "dependsOn": [
+        {
+          "target": "build",
+          "dependencies": true
+        }
+      ]
+    },
+    "destroy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/infrastructure",
+        "outputPath": "dist/libs/infrastructure",
+        "commands": [
+          {
+            "command": "npx aws-cdk destroy --all --require-approval never --force",
+            "forwardAllArgs": true
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  },
+  "tags": [],
+  "implicitDependencies": [
+    "web"
+  ]
+}
