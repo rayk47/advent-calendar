@@ -16,6 +16,7 @@ interface CognitoStackProps extends StackProps {
     initialUsername: string;
     initialPassword: string;
     hostedZone: IHostedZone;
+    isWebLocal: boolean;
 }
 
 export class CognitoStack extends Stack {
@@ -36,6 +37,7 @@ export class CognitoStack extends Stack {
         });
         this.userPool.applyRemovalPolicy(RemovalPolicy.DESTROY);
 
+        const callbackUrl = props.isWebLocal ? 'http://localhost:4200' : 'https://' + props.redirectUrl;
         const client = this.userPool.addClient('AdventCalendarClient',
             {
                 oAuth: {
@@ -43,7 +45,7 @@ export class CognitoStack extends Stack {
                         implicitCodeGrant: true
                     },
                     scopes: [OAuthScope.OPENID],
-                    callbackUrls: ['https://' + props.redirectUrl]
+                    callbackUrls: [callbackUrl]
                 },
                 supportedIdentityProviders: [UserPoolClientIdentityProvider.COGNITO]
             }
@@ -66,7 +68,7 @@ export class CognitoStack extends Stack {
         });
         aRecord.applyRemovalPolicy(RemovalPolicy.DESTROY);
 
-        this.loginUrl = `https://auth.${props.domainName}/oauth2/authorize?client_id=${client.userPoolClientId}&response_type=token&scope=openid&redirect_uri=https://${props.redirectUrl}`;
+        this.loginUrl = `https://auth.${props.domainName}/oauth2/authorize?client_id=${client.userPoolClientId}&response_type=token&scope=openid&redirect_uri=${callbackUrl}`;
 
         new AwsCustomResource(this,
             "AdventCalendarUserPoolDomainNameCustomResourceCreateUser",

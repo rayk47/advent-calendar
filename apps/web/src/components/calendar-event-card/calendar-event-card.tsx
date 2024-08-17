@@ -26,10 +26,10 @@ export function CalendarEventCard(props: CalendarEventCardProps) {
   }
 
   return (
-    <div>
+    <div style={{ maxWidth: '40vw' }}>
       <div role='button' className={styles.snowbutton} onClick={() => onEventSelection(props.event)}>
         <Image preview={false} key={props.event.date} src={props.event.image} alt={props.event.date}></Image>
-        <div style={{ fontSize: '5vw' }} className={styles.centered}>{props.event.day}</div>
+        <div style={{ fontSize: '10vw' }} className={styles.centered}>{props.event.day}</div>
       </div>
       {showNotAllowedViewModal && <NotAllowedModal close={() => setShowNotAllowedViewModal(false)}></NotAllowedModal>}
       {showGiftModal && <GiftModal gift={giftEvent!['gift']} close={() => setShowGiftModal(false)}></GiftModal>}

@@ -6,7 +6,8 @@
     "build": "nx run-many --target=build --all",
     "lint": "nx run-many --target=lint --all",
     "deploy": "npm run build && nx run-many --target=deploy --all",
-    "destroy": "npm run build && nx run-many --target=destroy --all"
+    "destroy": "npm run build && nx run-many --target=destroy --all",
+    "serve": "export $(grep -v '^#' .env | xargs) && nx run-many --target=serve --all"
   },
   "private": true,
   "dependencies": {

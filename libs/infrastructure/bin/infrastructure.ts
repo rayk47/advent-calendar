@@ -22,7 +22,8 @@ const cognitoStack = new CognitoStack(app, 'AdventCalendarCognitoStack', {
     env: { region: config.REGION },
     domainName: config.DOMAIN_NAME,
     certificate: dnsStack.certificateForDomain,
-    hostedZone: dnsStack.hostedZone
+    hostedZone: dnsStack.hostedZone,
+    isWebLocal: config.IS_WEB_LOCAL
 });
 
 new ApiGatewayStack(app, 'AdventCalendarApiGatewayStack', { userPoolArn: cognitoStack.userPool.userPoolArn, cloudfrontDistribution: cloudfrontStack.cloudfrontDistribution, loginUrl: cognitoStack.loginUrl, env: { region: config.REGION } });

@@ -1,7 +1,6 @@
 import { config as dotenv } from 'dotenv';
 import { join } from 'path';
 
-//TODO: add a template to this repo
 dotenv({ path: join(__dirname, '../../.env') });
 
 export type ConfigProps = {
@@ -10,7 +9,8 @@ export type ConfigProps = {
     SUBDOMAIN_NAME: string;
     INITIAL_USERNAME: string;
     INITIAL_PASSWORD: string;
-    FQDN: string
+    FQDN: string;
+    IS_WEB_LOCAL: boolean;
 };
 
 export const getConfig = (): ConfigProps => {
@@ -18,6 +18,7 @@ export const getConfig = (): ConfigProps => {
     const subdomainName = process.env.SUBDOMAIN_NAME;
     const initialUsername = process.env.INITIAL_USERNAME;
     const initialPassword = process.env.INITIAL_PASSWORD;
+    const isWebLocal = process.env.IS_WEB_LOCAL === 'true' ? true : false
 
     if (!domainName) {
         throw new Error(`ENV Variable DOMAIN_NAME is required`);
@@ -40,6 +41,7 @@ export const getConfig = (): ConfigProps => {
         SUBDOMAIN_NAME: subdomainName,
         INITIAL_USERNAME: initialUsername,
         INITIAL_PASSWORD: initialPassword,
-        FQDN: subdomainName + '.' + domainName
+        FQDN: subdomainName + '.' + domainName,
+        IS_WEB_LOCAL: isWebLocal
     }
 }

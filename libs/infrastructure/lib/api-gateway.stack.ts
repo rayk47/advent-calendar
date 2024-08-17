@@ -88,7 +88,7 @@ export class ApiGatewayStack extends Stack {
         eventIdResource.applyRemovalPolicy(RemovalPolicy.DESTROY);
 
         const getAllEventInfo = new NodejsFunction(this, "getAllEventInfo", {
-            runtime: Runtime.NODEJS_18_X, //TODO: Upgrade to Node 20
+            runtime: Runtime.NODEJS_20_X,
             projectRoot: join(__dirname, '../../../'),
             depsLockFilePath: join(__dirname, '../../../package-lock.json'),
             handler: "getAllEventInfo",
@@ -99,7 +99,7 @@ export class ApiGatewayStack extends Stack {
         const getAllEventInfoIntegration = new LambdaIntegration(getAllEventInfo);
 
         const getEventGift = new NodejsFunction(this, "getEventGift", {
-            runtime: Runtime.NODEJS_18_X,
+            runtime: Runtime.NODEJS_20_X,
             projectRoot: join(__dirname, '../../../'),
             depsLockFilePath: join(__dirname, '../../../package-lock.json'),
             handler: "getEventGift",
