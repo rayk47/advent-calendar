@@ -17,12 +17,11 @@ export class DNSStackStack extends Stack {
     constructor(scope: Construct, id: string, props: DNSStackProps) {
         super(scope, id, props);
 
-        //TODO: This should be setup by the infrastructure
+        //TODO:  Note this in the readme
         this.hostedZone = HostedZone.fromHostedZoneAttributes(this, "AdevntCalendarHostedZone", {
             zoneName: props.domainName,
             hostedZoneId: 'Z09767703BNP203G3HTGV'
         });
-        // hostedZone.applyRemovalPolicy(RemovalPolicy.DESTROY);
 
         // TLS certificate
         this.certificateForDomain = new Certificate(this, 'AdventCalendarSiteCertificate', {

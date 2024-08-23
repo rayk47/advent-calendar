@@ -5,8 +5,11 @@ dist
 tmp
 /out-tsc
 
+
 # dependencies
 node_modules
+*cdk.out
+*node_modules
 
 # IDEs and editors
 /.idea

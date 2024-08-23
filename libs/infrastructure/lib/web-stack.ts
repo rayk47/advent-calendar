@@ -17,7 +17,7 @@ export class WebStack extends Stack {
 
     new BucketDeployment(this, 'AdventCalendarWebBucketDeployment', {
       destinationBucket: props.s3Bucket,
-      sources: [Source.asset(join(__dirname, '../../../dist/apps/web'))],
+      sources: [Source.asset(join(__dirname, '../../../dist/apps/web')), Source.asset(join(__dirname, '../assets'))],
       distribution: props.cloudfrontDistribution,
       distributionPaths: ['/*'],
       retainOnDelete: false

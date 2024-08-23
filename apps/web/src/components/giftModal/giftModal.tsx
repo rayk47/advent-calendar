@@ -14,7 +14,7 @@ export function GiftModal(props: GiftModalProps) {
           {props.gift.description}
         </Space>
         <Space>
-          <Image preview={false} src={props.gift.image}></Image>
+          <Image height={'50vw'} preview={false} src={props.gift.image}></Image>
         </Space>
       </Space>
     </Modal>
