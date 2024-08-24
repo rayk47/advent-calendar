@@ -10,12 +10,14 @@ export type ConfigProps = {
     INITIAL_USERNAME: string;
     INITIAL_PASSWORD: string;
     FQDN: string;
+    HOSTED_ZONE_ID: string;
     IS_WEB_LOCAL: boolean;
 };
 
 export const getConfig = (): ConfigProps => {
     const domainName = process.env.DOMAIN_NAME;
     const subdomainName = process.env.SUBDOMAIN_NAME;
+    const hostedZoneId = process.env.HOSTED_ZONE_ID;
     const initialUsername = process.env.INITIAL_USERNAME;
     const initialPassword = process.env.INITIAL_PASSWORD;
     const isWebLocal = process.env.IS_WEB_LOCAL === 'true' ? true : false
@@ -26,6 +28,10 @@ export const getConfig = (): ConfigProps => {
 
     if (!subdomainName) {
         throw new Error(`ENV Variable SUBDOMAIN_NAME is required`);
+    }
+
+    if (!hostedZoneId) {
+        throw new Error(`ENV Variable HOSTED_ZONE_ID is required`);
     }
 
     if (!initialUsername) {
@@ -39,6 +45,7 @@ export const getConfig = (): ConfigProps => {
         REGION: process.env.REGION || "us-east-1",
         DOMAIN_NAME: domainName,
         SUBDOMAIN_NAME: subdomainName,
+        HOSTED_ZONE_ID: hostedZoneId,
         INITIAL_USERNAME: initialUsername,
         INITIAL_PASSWORD: initialPassword,
         FQDN: subdomainName + '.' + domainName,

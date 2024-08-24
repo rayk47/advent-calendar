@@ -11,7 +11,7 @@ const app = new App();
 
 const config = getConfig();
 
-const dnsStack = new DNSStackStack(app, 'AdventCalendarDNSStack', { domainName: config.DOMAIN_NAME, fqdn: config.FQDN, env: { region: config.REGION } });
+const dnsStack = new DNSStackStack(app, 'AdventCalendarDNSStack', { domainName: config.DOMAIN_NAME, fqdn: config.FQDN, env: { region: config.REGION }, hostedZoneId: config.HOSTED_ZONE_ID });
 
 const cloudfrontStack = new CloudfrontStackStack(app, 'AdventCalendarCloudfrontStack', { certificate: dnsStack.certificateForDomain, hostedZone: dnsStack.hostedZone, domainName: config.DOMAIN_NAME, fqdn: config.FQDN, env: { region: config.REGION } });
 

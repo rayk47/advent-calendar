@@ -7,7 +7,8 @@ import { Certificate, CertificateValidation } from 'aws-cdk-lib/aws-certificatem
 
 export interface DNSStackProps extends StackProps {
     fqdn: string
-    domainName: string
+    domainName: string,
+    hostedZoneId: string
 }
 
 export class DNSStackStack extends Stack {
@@ -18,9 +19,9 @@ export class DNSStackStack extends Stack {
         super(scope, id, props);
 
         //TODO:  Note this in the readme
-        this.hostedZone = HostedZone.fromHostedZoneAttributes(this, "AdevntCalendarHostedZone", {
+        this.hostedZone = HostedZone.fromHostedZoneAttributes(this, "AdventCalendarHostedZone", {
             zoneName: props.domainName,
-            hostedZoneId: 'Z09767703BNP203G3HTGV'
+            hostedZoneId: props.hostedZoneId
         });
 
         // TLS certificate
