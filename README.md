@@ -31,6 +31,10 @@ Christmas is a beautiful time dedicated to spending time with family and loved o
 ## 📝 How to Setup and Deploy
 To setup and run your own advent calendar it is expected that you have some coding skills, ideally with javascript and that you have used AWS services before. 
 
+<details>
+
+<summary>Setup</summary>
+
 #### 1. Install Node
 See the following [Guide](https://nodejs.org/en/download/package-manager) to download and install
 
@@ -70,6 +74,8 @@ If you ever want to destroy the calendar you can run
 ```
 npm run destroy
 ```
+
+</details>
 
 ## 🏠 Architecture & Technologies
 This project uses the following technologies 
