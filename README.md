@@ -8,7 +8,7 @@
 </h1>
 
 <p align="center">
-  <img alt="advent-calendar-demo-gif" src="https://github.com/rayk47/advent-calendar/blob/main/images/readme/AdventCalendarDemo.gif">
+  <img height="400px" alt="advent-calendar-demo-gif" src="https://github.com/rayk47/advent-calendar/blob/main/images/readme/AdventCalendarDemo.gif">
 </p>
 
 ## Table of Contents
