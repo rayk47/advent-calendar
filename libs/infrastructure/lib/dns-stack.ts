@@ -18,7 +18,6 @@ export class DNSStackStack extends Stack {
     constructor(scope: Construct, id: string, props: DNSStackProps) {
         super(scope, id, props);
 
-        //TODO:  Note this in the readme
         this.hostedZone = HostedZone.fromHostedZoneAttributes(this, "AdventCalendarHostedZone", {
             zoneName: props.domainName,
             hostedZoneId: props.hostedZoneId
