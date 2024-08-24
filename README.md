@@ -7,7 +7,9 @@
   <a href="https://github.com/rayk47/advent-calendar/blob/main/LICENSE.md"><img src=https://img.shields.io/github/license/rayk47/advent-calendar.svg?colorB=ff0000></a>
 </h1>
 
-![](https://github.com/rayk47/advent-calendar/blob/main/images/readme/AdventCalendarDemo.gif)
+<p align="center">
+  <img alt="advent-calendar-demo-gif" src="https://github.com/rayk47/advent-calendar/blob/main/images/readme/AdventCalendarDemo.gif">
+</p>
 
 ## Table of Contents
 - [About](#🚀-about)
