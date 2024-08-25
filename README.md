@@ -5,7 +5,7 @@
   <a href="https://christmas2023.monsoonandrayadventcalendar.link/"><img src=https://img.shields.io/badge/AdventCalendar-try%20now-brightgreen.svg?colorA=087c08></a>
   <a href="https://github.com/rayk47/advent-calendar/releases"><img src=https://img.shields.io/github/release/rayk47/advent-calendar.svg?colorB=58839b></a>
   <a href="https://github.com/rayk47/advent-calendar/blob/main/LICENSE.md"><img src=https://img.shields.io/github/license/rayk47/advent-calendar.svg?colorB=ff0000></a>
-  <a href="https://www.buymeacoffee.com/rayk47" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+  <a href="https://www.buymeacoffee.com/rayk47" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 24px !important;width: 104px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 </h1>
 
 <p align="center">
